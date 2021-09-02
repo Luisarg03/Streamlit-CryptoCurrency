@@ -26,7 +26,7 @@ More visualizations and functionalities will be implemented in the future.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/Luisarg03/Streamlit-CryptoCurrency.git
    ```
 2. Create Python env on distros Linux
    ```sh
