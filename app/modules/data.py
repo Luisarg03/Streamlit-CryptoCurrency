@@ -3,8 +3,10 @@
 import pandas as pd
 import requests as rq
 import numpy as np
+import streamlit as st
 
 
+@st.cache
 def get_data(page):
     '''
     Extract data and transform from API

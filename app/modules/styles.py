@@ -2,8 +2,10 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
 import numpy as np
+import streamlit as st
 
 
+@st.cache
 def style_table(df):
     '''
     Set style for table view
