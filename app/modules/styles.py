@@ -44,7 +44,7 @@ def style_table(df):
     'font-weight': 'bold',
     }). \
     set_table_styles([
-        dict(selector = 'th', props='text-align: center; font-size: 12pt; border: None'),
+        dict(selector = 'th', props='text-align: center; font-size: 10pt; border: None'),
         ]). \
     apply(highlight_max, subset=cols). \
     format(thousands=","). \
