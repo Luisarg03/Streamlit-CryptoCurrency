@@ -18,7 +18,7 @@ def buttom():
     return page_number
 
 
-@st.cache
+@st.cache(suppress_st_warning=True)
 def table(data):
     table = st.empty()
     table.write(data.to_html(), unsafe_allow_html=True)
