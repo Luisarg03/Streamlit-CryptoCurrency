@@ -3,7 +3,7 @@
   <h3 align="center">README</h3>
   <h4 align="center">Streamlit CryptoCurrency</h4>
   <p align="center">
-    <a href="">View Demo</a>
+    <a href="https://share.streamlit.io/luisarg03/streamlit-cryptocurrency/app/app.py">View Demo</a>
     ·
     <a href="https://github.com/Luisarg03/Streamlit-CryptoCurrency/issues">Report Bug</a>
   </p>
