@@ -5,7 +5,6 @@ import numpy as np
 import streamlit as st
 
 
-
 def style_table(df):
     '''
     Set style for table view
