@@ -17,7 +17,7 @@ col1, col2, col3, col4, col5, col6 = st.columns([1,1,1,1,1,1])
 
 
 def box_select_coin(col_position):
-    path = './helpers/CoinsID.json'
+    path = './app/helpers/CoinsID.json'
     df = pd.read_json(path)
     box_coins =  col_position.multiselect('', df['id'], help='Select coins...')
 
