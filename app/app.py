@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import streamlit as st
+import pandas as pd
 from modules.data import get_data
 from modules.styles import style_table
-from modules.views import table, buttom, box_select_coin, sidebar
+from modules.views import table, buttom, sidebar
 from modules.funtions import ping
 
 
@@ -13,6 +14,19 @@ st.set_page_config(
     layout="wide")
 
 col1, col2, col3, col4, col5, col6 = st.columns([1,1,1,1,1,1])
+
+
+def box_select_coin(col_position):
+    path = './helpers/CoinsID.json'
+    df = pd.read_json(path)
+    box_coins =  col_position.multiselect('', df['id'], help='Select coins...')
+
+    if box_coins == []:
+        box_coins = None
+    else:
+        box_coins = str(box_coins).replace('[', '').replace(']', '')
+
+    return box_coins
 
 
 if __name__ == '__main__':
