@@ -5,6 +5,7 @@ import requests as rq
 
 def ping():
     '''
+    QUE hace esto? 
     Test connection
     '''
     url = 'https://api.coingecko.com/api/v3/ping'
