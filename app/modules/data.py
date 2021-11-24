@@ -3,9 +3,11 @@
 import pandas as pd
 import requests as rq
 import numpy as np
+import streamlit as st
 
 
-def get_data(page):
+@st.cache
+def get_data(page, coins=None):
     '''
     Extract data and transform from API
 
@@ -22,16 +24,23 @@ def get_data(page):
     ---------
     DataFrame
     '''
+    
+    if coins == None:
+        pass
+    else:
+        coins = str(coins).replace("'", '')
 
-    url = 'https://api.coingecko.com/api/v3/coins/markets'
     params = {
     'vs_currency': 'usd',
+    'ids': coins,
     'order':'market_cap_desc',
     'per_page':50,
     'page':page,
     'sparkline': False,
     'price_change_percentage': '1h'
     }
+
+    url = 'https://api.coingecko.com/api/v3/coins/markets'
 
     response = rq.get(url, params=params).json()
 
@@ -75,7 +84,6 @@ def get_data(page):
     df = df.rename(columns=rename)
     df['VARIATION (%)'] = df['VARIATION (%)'].fillna(0)
     df['LAST UPDATED'] = pd.to_datetime(df['LAST UPDATED']).dt.strftime('%H:%M:%S')
-    # df['LAST UPDATED'] = pd.to_datetime(df['LAST UPDATED']).dt.strftime('%Y-%m-%d %H:%M:%S')
 
     for i in df.select_dtypes(include=[np.int64]):
         df[i] = df[i].astype(float)
